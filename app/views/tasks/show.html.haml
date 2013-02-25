@@ -1,0 +1,16 @@
+%p#notice= notice
+%table.table.table-striped
+  %tbody
+    %tr
+      %td 
+        Name
+      %td
+        = @task.name
+    %tr
+      %td 
+        Status
+      %td
+        = @task.status
+
+= link_to 'Edit', edit_task_path(@task), :class => 'btn btn-primary'
+= link_to 'Back', tasks_path, :class => 'btn'

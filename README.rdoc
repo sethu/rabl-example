@@ -1,0 +1,21 @@
+== Welcome to Rabl API with devise token authentication
+  This rails application is to demonsration the API access using rabl gem and with devise token authentication. So the UI part very basic, you can sign-in and CRUD task model.
+  For sign-up you need to use API call and other actions also can be done through API, like, sign-in and task model CRUD. I have kept the ui provision sign-in and task CRUD to compare the result with API access.
+
+#Ruby code signup via API
+  requre 'http'
+  url = 'http://rabl.herokuapp.com/users.json?api_key=josh-software'
+  url = URI.parse(url)
+  http_connection = Net::HTTP.new(url.host, 80)
+  header    = {'Content-Type' =>  "application/json"}
+  req = {"user" => {"email" => "one_two@two.com", "password" => "password", "password_confirmation" => "password", "accept_terms" => 1}}
+  response  = http_connection.post(url.request_uri, req.to_json, header)
+
+The above response will respond with token_authentication if the signup request is success. Otherwise, it will respond with error.
+
+#Ruby code to access task list with token
+  url = 'http://rabl.herokuapp.com/tasks.json?auth_token=<token_authentication>'
+  url = URI.parse(url)
+  http_connection = Net::HTTP.new(url.host, 80)
+  header    = {'Content-Type' =>  "application/json"}
+  response  = http_connection.get(url.request_uri,header)

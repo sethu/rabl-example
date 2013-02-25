@@ -1,0 +1,25 @@
+%h1 Listing tasks
+
+%table.table.table-striped
+  %tr
+    %th name
+    %th status
+    %th
+
+  - @tasks.each do |task|
+    %tr
+      %td= task.name
+      %td= task.status
+      %td 
+        %i.icon-eye-open 
+        = link_to 'Show', task
+        |
+        %i.icon-edit 
+        = link_to 'Edit', edit_task_path(task)
+        |
+        %i.icon-remove 
+        = link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Task', new_task_path, :class => "btn"
