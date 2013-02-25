@@ -2,6 +2,8 @@
   This rails application is to demonsration the API access using rabl gem and with devise token authentication. So the UI part very basic, you can sign-in and CRUD task model.
   For sign-up you need to use API call and other actions also can be done through API, like, sign-in and task model CRUD. I have kept the ui provision sign-in and task CRUD to compare the result with API access.
 
+  There is rails application running on heroku(http://rabl.herokuapp.com) for testing out the API
+
 #Ruby code signup via API
   requre 'http'
   url = 'http://rabl.herokuapp.com/users.json?api_key=josh-software'
