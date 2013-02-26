@@ -1,5 +1,5 @@
 == Welcome to Rabl API with devise token authentication
-  This rails application is to demonsration the API access using rabl gem and with devise token authentication. So the UI part very basic, you can sign-in and CRUD task model.
+  This rails application is to demonsration the API access using rabl gem and with devise token authentication. So the UI part very basic, you can sign-in and CRUD task model. This application is created in support of the blog <a href="http://blog.joshsoftware.com/2011/12/23/designing-rails-api-using-rabl-and-devise/">Designing rails API using rabl and devise</a> to help understanding 
   For sign-up you need to use API call and other actions also can be done through API, like, sign-in and task model CRUD. I have kept the ui provision sign-in and task CRUD to compare the result with API access.
 
   There is rails application running on heroku(http://rabl.herokuapp.com) for testing out the API
